@@ -14,6 +14,7 @@
 
 <style>
 	.card {
+        width: 100%;
 		background: #f8f9fa;
 		border-radius: 8px;
 		border-left: 4px solid #ff3e00;

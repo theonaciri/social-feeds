@@ -62,23 +62,27 @@
 		description="Welcome to your social feed! Here you'll see updates from your friends and the community."
 	/>
 	
-	<List 
-		items={posts} 
-		class="mt-4"
-	>
-		{#snippet children(item, index)}
-			<PostCard 
-				title={item.title}
-				content={item.content}
-				author={item.author}
-				time={item.time}
-				likes={item.likes}
-				comments={item.comments}
-				shares={item.shares}
-				onLike={() => handleLike(item.id)}
-				onComment={() => handleComment(item.id)}
-				onShare={() => handleShare(item.id)}
-			/>
-		{/snippet}
-	</List>
+	<div in:fadeIn={{ duration: 300, delay: 100 }}>
+		<List 
+			items={posts} 
+			class="mt-4"
+		>
+			{#snippet children(item, index)}
+				<div in:staggeredSlide={{ duration: 300, index }}>
+					<PostCard 
+						title={item.title}
+						content={item.content}
+						author={item.author}
+						time={item.time}
+						likes={item.likes}
+						comments={item.comments}
+						shares={item.shares}
+						onLike={() => handleLike(item.id)}
+						onComment={() => handleComment(item.id)}
+						onShare={() => handleShare(item.id)}
+					/>
+				</div>
+			{/snippet}
+		</List>
+	</div>
 </PageContainer>

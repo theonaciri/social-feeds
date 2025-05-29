@@ -6,6 +6,7 @@
 	import Section from '$lib/components/Section.svelte';
 	import Heading from '$lib/components/Heading.svelte';
 	import List from '$lib/components/List.svelte';
+	import { fadeIn, staggeredSlide } from '$lib/transitions.ts';
 
 	const memes = [
 		{

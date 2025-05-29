@@ -1,11 +1,11 @@
 <script lang="ts">
 	interface Props {
 		categories: string[];
-		activeCategory?: string;
-		onCategoryChange?: (category: string) => void;
+		activeCategory: string;
+		onCategoryChange: (category: string) => void;
 	}
 
-	let { categories, activeCategory = categories[0], onCategoryChange }: Props = $props();
+	let { categories, activeCategory, onCategoryChange }: Props = $props();
 
 	function handleCategoryClick(category: string) {
 		if (onCategoryChange) {
