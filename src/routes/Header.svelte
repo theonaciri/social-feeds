@@ -19,11 +19,20 @@
 			<li aria-current={page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
-			<li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
+			<li aria-current={page.url.pathname === '/feed' ? 'page' : undefined}>
+				<a href="/feed">Feed</a>
 			</li>
-			<li aria-current={page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
+			<li aria-current={page.url.pathname === '/friends' ? 'page' : undefined}>
+				<a href="/friends">Friends</a>
+			</li>
+			<li aria-current={page.url.pathname === '/memes' ? 'page' : undefined}>
+				<a href="/memes">Memes</a>
+			</li>
+			<li aria-current={page.url.pathname === '/news' ? 'page' : undefined}>
+				<a href="/news">News</a>
+			</li>
+			<li aria-current={page.url.pathname === '/fanbase' ? 'page' : undefined}>
+				<a href="/fanbase">Fanbase</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">

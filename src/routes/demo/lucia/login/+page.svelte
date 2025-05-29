@@ -1,34 +1,46 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import type { ActionData } from './$types';
+	import Form from '$lib/components/Form.svelte';
+	import Input from '$lib/components/Input.svelte';
+	import Button from '$lib/components/Button.svelte';
+	import Heading from '$lib/components/Heading.svelte';
 
 	let { form }: { form: ActionData } = $props();
 </script>
 
-<h1>Login/Register</h1>
-<form method="post" action="?/login" use:enhance>
-	<label>
-		Username
-		<input
+<Heading level={1} size="xl" align="center">Login/Register</Heading>
+
+<Form>
+	<form method="post" action="?/login" use:enhance>
+		<Input
+			label="Username"
 			name="username"
-			class="mt-1 rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+			required
 		/>
-	</label>
-	<label>
-		Password
-		<input
-			type="password"
+		
+		<Input
+			label="Password"
 			name="password"
-			class="mt-1 rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+			type="password"
+			required
 		/>
-	</label>
-	<button class="rounded-md bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700"
-		>Login</button
-	>
-	<button
-		formaction="?/register"
-		class="rounded-md bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700"
-		>Register</button
-	>
-</form>
-<p style="color: red">{form?.message ?? ''}</p>
+		
+		<div style="display: flex; gap: 1rem;">
+			<Button type="submit" variant="primary">
+				Login
+			</Button>
+			<Button 
+				type="submit" 
+				variant="secondary"
+				formaction="?/register"
+			>
+				Register
+			</Button>
+		</div>
+	</form>
+	
+	{#if form?.message}
+		<p style="color: red; margin-top: 1rem;">{form.message}</p>
+	{/if}
+</Form>
