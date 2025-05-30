@@ -74,6 +74,7 @@
 
 	.list-item {
 		flex-shrink: 0;
+		width: 100%;
 	}
 
 	.empty-state {

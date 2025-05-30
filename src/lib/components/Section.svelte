@@ -36,14 +36,15 @@
 	}
 
 	.section-title {
-		color: #333;
+		color: var(--color-text);
 		margin: 0 0 0.5rem 0;
 		font-size: 1.5rem;
 		font-weight: 600;
 	}
 
 	.section-subtitle {
-		color: #666;
+		color: var(--color-text);
+		opacity: 0.7;
 		margin: 0;
 		font-size: 1rem;
 		line-height: 1.5;

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
+	import DarkModeToggle from '$lib/components/DarkModeToggle.svelte';
 </script>
 
 <header>
@@ -41,9 +41,7 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
-		</a>
+		<DarkModeToggle />
 	</div>
 </header>
 
@@ -54,8 +52,11 @@
 	}
 
 	.corner {
-		width: 3em;
+		width: auto;
 		height: 3em;
+		display: flex;
+		align-items: center;
+		padding: 0 1rem;
 	}
 
 	.corner a {
@@ -75,7 +76,7 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		--background: var(--color-card-bg);
 	}
 
 	svg {

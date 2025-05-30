@@ -50,7 +50,9 @@
 		info: 'ℹ️',
 		warning: '⚠️',
 		error: '❌',
-		success: '✅'
+		success: '✅',
+		sun: '☀️',
+		moon: '🌙'
 	};
 
 	const iconContent = icons[name] || name;

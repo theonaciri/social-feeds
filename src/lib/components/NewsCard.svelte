@@ -32,7 +32,7 @@
 </script>
 
 <Card>
-	<article class="news-article" class:clickable={onClick} onclick={onClick}>
+	<article class="news-article card" class:clickable={onClick} onclick={onClick}>
 		<div class="article-header">
 			<h3>{title}</h3>
 			{#if time}
@@ -83,14 +83,15 @@
 
 	.article-header h3 {
 		margin: 0;
-		color: #333;
+		color: var(--color-text);
 		flex: 1;
 		margin-right: 1rem;
 		font-size: 1.2rem;
 	}
 
 	.article-time {
-		color: #6c757d;
+		color: var(--color-text);
+		opacity: 0.7;
 		font-size: 0.9rem;
 		white-space: nowrap;
 	}
@@ -98,7 +99,8 @@
 	.article-content {
 		margin: 0 0 1rem 0;
 		line-height: 1.6;
-		color: #555;
+		color: var(--color-text);
+		opacity: 0.8;
 	}
 
 	.article-footer {
@@ -109,7 +111,7 @@
 
 	.article-source {
 		font-weight: 500;
-		color: #ff3e00;
+		color: var(--color-theme-1);
 		font-size: 0.9rem;
 	}
 </style>

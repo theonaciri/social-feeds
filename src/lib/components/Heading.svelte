@@ -13,7 +13,7 @@
 	let {
 		level = 2,
 		size = 'md',
-		color = '#333',
+		color = 'var(--color-text)',
 		weight = 'semibold',
 		align = 'left',
 		margin = '0',

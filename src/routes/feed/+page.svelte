@@ -69,20 +69,18 @@
 			class="mt-4"
 		>
 			{#snippet children(item, index)}
-				<div in:fade={{ duration: 300 }}>
-					<PostCard 
-						title={item.title}
-						content={item.content}
-						author={item.author}
-						time={item.time}
-						likes={item.likes}
-						comments={item.comments}
-						shares={item.shares}
-						onLike={() => handleLike(item.id)}
-						onComment={() => handleComment(item.id)}
-						onShare={() => handleShare(item.id)}
-					/>
-				</div>
+				<PostCard 
+					title={item.title}
+					content={item.content}
+					author={item.author}
+					time={item.time}
+					likes={item.likes}
+					comments={item.comments}
+					shares={item.shares}
+					onLike={() => handleLike(item.id)}
+					onComment={() => handleComment(item.id)}
+					onShare={() => handleShare(item.id)}
+				/>
 			{/snippet}
 		</List>
 	</div>

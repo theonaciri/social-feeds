@@ -30,7 +30,7 @@
 </script>
 
 <Card>
-	<article class="post">
+	<article class="post card">
 		<div class="post-header">
 			<h3>{title}</h3>
 			{#if author}
@@ -68,12 +68,14 @@
 
 	.post-header h3 {
 		margin: 0 0 0.5rem 0;
-		color: #333;
+		color: var(--color-text);
 		font-size: 1.3rem;
+		font-weight: 600;
 	}
 
 	.post-author {
-		color: #6c757d;
+		color: var(--color-text);
+		opacity: 0.7;
 		font-size: 0.9rem;
 		font-style: italic;
 	}
@@ -81,7 +83,8 @@
 	.post-content {
 		margin: 0 0 1rem 0;
 		line-height: 1.6;
-		color: #333;
+		color: var(--color-text);
+		opacity: 0.9;
 	}
 
 	.post-footer {
@@ -89,11 +92,12 @@
 		justify-content: space-between;
 		align-items: center;
 		padding-top: 0.5rem;
-		border-top: 1px solid #e9ecef;
+		border-top: 1px solid var(--color-border);
 	}
 
 	.post-time {
-		color: #6c757d;
+		color: var(--color-text);
+		opacity: 0.6;
 		font-size: 0.85rem;
 	}
 </style>

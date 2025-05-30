@@ -101,7 +101,8 @@
 	.intro {
 		font-size: 1.2rem;
 		text-align: center;
-		color: #666;
+		color: var(--color-text);
+		opacity: 0.8;
 		margin: 2rem 0;
 		max-width: 600px;
 		line-height: 1.6;
@@ -123,13 +124,14 @@
 
 	.action-link h3 {
 		margin: 0 0 0.5rem 0;
-		color: #333;
+		color: var(--color-text);
 		font-size: 1.1rem;
 	}
 
 	.action-link p {
 		margin: 0;
-		color: #666;
+		color: var(--color-text);
+		opacity: 0.7;
 		font-size: 0.9rem;
 		line-height: 1.4;
 	}

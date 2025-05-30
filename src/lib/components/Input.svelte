@@ -59,7 +59,7 @@
 
 	.input-label {
 		font-weight: 500;
-		color: #333;
+		color: var(--color-text);
 		font-size: 0.9rem;
 	}
 
@@ -70,23 +70,30 @@
 
 	.input {
 		padding: 0.75rem;
-		border: 1px solid #dee2e6;
+		border: 1px solid var(--color-border);
 		border-radius: 4px;
 		font-size: 1rem;
-		transition: border-color 0.2s, box-shadow 0.2s;
-		background: white;
+		transition: all 0.2s ease;
+		background: var(--color-input-bg);
+		color: var(--color-text);
 	}
 
 	.input:focus {
 		outline: none;
-		border-color: #ff3e00;
+		border-color: var(--color-theme-1);
 		box-shadow: 0 0 0 2px rgba(255, 62, 0, 0.2);
 	}
 
 	.input:disabled {
-		background: #f8f9fa;
-		color: #6c757d;
+		background: var(--color-bg-2);
+		color: var(--color-text);
+		opacity: 0.6;
 		cursor: not-allowed;
+	}
+
+	.input::placeholder {
+		color: var(--color-text);
+		opacity: 0.5;
 	}
 
 	.input.error {

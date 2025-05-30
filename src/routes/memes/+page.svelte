@@ -72,7 +72,8 @@
 
 <style>
 	.meme-placeholder {
-		background: #e9ecef;
+		background: var(--color-bg-2);
+		border: 1px solid var(--color-border);
 		border-radius: 4px;
 		padding: 2rem;
 		text-align: center;
@@ -81,11 +82,19 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		transition: all 0.2s ease;
+	}
+
+	.meme-placeholder:hover {
+		background: var(--color-button-bg);
+		transform: translateY(-1px);
+		box-shadow: 0 2px 8px var(--color-shadow);
 	}
 
 	.meme-placeholder p {
 		font-size: 1.2rem;
 		margin: 0;
 		font-weight: 500;
+		color: var(--color-text);
 	}
 </style>

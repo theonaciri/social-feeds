@@ -51,8 +51,9 @@
 		cursor: pointer;
 		padding: 0.25rem 0.5rem;
 		border-radius: 4px;
-		transition: background-color 0.2s;
+		transition: all 0.2s ease;
 		font-size: 0.9rem;
+		color: var(--color-text);
 	}
 
 	.action-buttons-small .action-btn {
@@ -61,18 +62,19 @@
 	}
 
 	.action-btn:hover {
-		background: #e9ecef;
+		background: var(--color-button-bg);
+		transform: translateY(-1px);
 	}
 
-	.like-btn {
+	.like-btn:hover {
 		color: #28a745;
 	}
 
-	.comment-btn {
-		color: #6c757d;
+	.comment-btn:hover {
+		color: var(--color-theme-2);
 	}
 
-	.share-btn {
+	.share-btn:hover {
 		color: #17a2b8;
 	}
 </style>

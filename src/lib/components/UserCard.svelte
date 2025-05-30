@@ -13,7 +13,7 @@
 </script>
 
 <Card padding="1rem">
-	<button type="button" class="user-profile" class:clickable={onclick} onclick={onclick}>
+	<div class="user-profile">
 		<div class="profile-info">
 			{#if avatar}
 				<div class="avatar">
@@ -33,7 +33,7 @@
 				{@render actions()}
 			</div>
 		{/if}
-	</button>
+	</div>
 </Card>
 
 <style>
@@ -42,12 +42,12 @@
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
+		background: transparent;
+		border: none;
+		padding: 0;
+		text-align: left;
+		transition: all 0.2s ease;
 	}
-
-	.user-profile.clickable {
-		cursor: pointer;
-	}
-
 	.profile-info {
 		display: flex;
 		align-items: center;
@@ -59,12 +59,14 @@
 		width: 50px;
 		height: 50px;
 		border-radius: 50%;
-		background: #e9ecef;
+		background: var(--color-bg-2);
+		border: 1px solid var(--color-border);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		font-size: 1.5rem;
 		flex-shrink: 0;
+		transition: all 0.2s ease;
 	}
 
 	.info {
@@ -75,12 +77,14 @@
 
 	.name {
 		display: block;
-		color: #333;
+		color: var(--color-text);
 		font-size: 1rem;
+		font-weight: 600;
 	}
 
 	.subtitle {
-		color: #6c757d;
+		color: var(--color-text);
+		opacity: 0.7;
 		font-size: 0.9rem;
 	}
 

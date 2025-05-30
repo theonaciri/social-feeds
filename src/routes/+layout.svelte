@@ -1,8 +1,20 @@
 <script lang="ts">
 	import Header from './Header.svelte';
+	import { onMount } from 'svelte';
+	import { theme } from '$lib/stores/theme';
 	import '../app.css';
 
 	let { children } = $props();
+
+	// Initialize theme on mount
+	onMount(() => {
+		// Theme is already initialized in the store, just ensure it's applied
+		theme.subscribe(currentTheme => {
+			if (typeof document !== 'undefined') {
+				document.documentElement.setAttribute('data-theme', currentTheme);
+			}
+		});
+	});
 </script>
 
 <div class="app">

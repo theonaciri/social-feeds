@@ -56,21 +56,27 @@
 
 	/* Variants */
 	.btn-primary {
-		background: #ff3e00;
+		background: var(--color-theme-1);
 		color: white;
 	}
 
 	.btn-primary:hover:not(:disabled) {
-		background: #e8350e;
+		background: var(--color-theme-1);
+		filter: brightness(0.9);
+		transform: translateY(-1px);
+		box-shadow: 0 4px 12px var(--color-shadow);
 	}
 
 	.btn-secondary {
-		background: #6c757d;
-		color: white;
+		background: var(--color-button-bg);
+		color: var(--color-text);
+		border: 1px solid var(--color-border);
 	}
 
 	.btn-secondary:hover:not(:disabled) {
-		background: #5a6268;
+		background: var(--color-button-hover);
+		transform: translateY(-1px);
+		box-shadow: 0 2px 8px var(--color-shadow);
 	}
 
 	.btn-success {
@@ -80,6 +86,8 @@
 
 	.btn-success:hover:not(:disabled) {
 		background: #218838;
+		transform: translateY(-1px);
+		box-shadow: 0 4px 12px var(--color-shadow);
 	}
 
 	.btn-danger {
@@ -89,16 +97,19 @@
 
 	.btn-danger:hover:not(:disabled) {
 		background: #c82333;
+		transform: translateY(-1px);
+		box-shadow: 0 4px 12px var(--color-shadow);
 	}
 
 	.btn-transparent {
 		background: transparent;
-		color: #666;
-		border: 1px solid #dee2e6;
+		color: var(--color-text);
+		border: 1px solid var(--color-border);
 	}
 
 	.btn-transparent:hover:not(:disabled) {
-		background: #e9ecef;
+		background: var(--color-button-bg);
+		transform: translateY(-1px);
 	}
 
 	/* Sizes */

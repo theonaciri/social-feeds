@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+import { page } from '$app/stores';
 	import PageContainer from '$lib/components/PageContainer.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import ActionButtons from '$lib/components/ActionButtons.svelte';
@@ -86,6 +86,7 @@
 			avatar: '🚀'
 		}
 	];
+	
 </script>
 
 <svelte:head>
@@ -101,28 +102,28 @@
 			</Button>
 		</div>
 
-		<article class="full-article" in:scale={{ duration: 250, delay: 67, start: 0.95, easing: quintOut }}>
+		<article class="full-article" in:scale={{ duration: 300, delay: 0, start: 0.95, easing: quintOut }}>
 			<header class="article-header">
-				<div class="article-meta" in:fly={{ y: 20, duration: 200, delay: 100 }}>
+				<div class="article-meta" in:fly={{ y: 20, duration: 300, delay: 400 }}>
 					<span class="category">{article.category}</span>
 					<span class="source">{article.source}</span>
 					<span class="time">{article.time}</span>
 				</div>
 				
-				<h1 class="article-title" in:fly={{ y: 30, duration: 250, delay: 133, easing: quintOut }}>
+				<h1 class="article-title" in:fly={{ y: 30, duration: 0, delay: 150, easing: quintOut }}>
 					{article.title}
 				</h1>
 				
-				<div class="author-info" in:fly={{ y: 20, duration: 200, delay: 167 }}>
+				<div class="author-info" in:fly={{ y: 20, duration: 200, delay: 100 }}>
 					<span class="author">By {article.author}</span>
 				</div>
 			</header>
 
-			<div class="article-image" in:scale={{ duration: 300, delay: 200, start: 0.9, easing: quintOut }}>
+			<div class="article-image" in:scale={{ duration: 300, delay: 150, start: 0.9, easing: quintOut }}>
 				<img src={article.image} alt={article.title} />
 			</div>
 
-			<div class="article-content" in:fly={{ y: 30, duration: 250, delay: 233, easing: quintOut }}>
+			<div class="article-content" in:fly={{ y: 30, duration: 250, delay: 50, easing: quintOut }}>
 				<p class="lead">{article.content}</p>
 				<div class="full-content">
 					{article.fullContent}
@@ -177,10 +178,11 @@
 	}
 
 	.full-article {
-		background: white;
+		background: var(--color-card-bg);
+		border: 1px solid var(--color-border);
 		border-radius: 12px;
 		padding: 2rem;
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 4px 20px var(--color-shadow);
 		margin-bottom: 3rem;
 	}
 
@@ -196,7 +198,7 @@
 	}
 
 	.category {
-		background: #ff3e00;
+		background: var(--color-theme-1);
 		color: white;
 		padding: 0.25rem 0.75rem;
 		border-radius: 15px;
@@ -205,12 +207,13 @@
 	}
 
 	.source {
-		color: #ff3e00;
+		color: var(--color-theme-1);
 		font-weight: 500;
 	}
 
 	.time {
-		color: #6c757d;
+		color: var(--color-text);
+		opacity: 0.7;
 		font-size: 0.9rem;
 	}
 
@@ -219,11 +222,12 @@
 		font-weight: 700;
 		line-height: 1.2;
 		margin: 1rem 0;
-		color: #333;
+		color: var(--color-text);
 	}
 
 	.author-info {
-		color: #666;
+		color: var(--color-text);
+		opacity: 0.8;
 		font-size: 1.1rem;
 	}
 
@@ -253,35 +257,38 @@
 		font-size: 1.25rem;
 		font-weight: 400;
 		line-height: 1.6;
-		color: #555;
+		color: var(--color-text);
+		opacity: 0.9;
 		margin-bottom: 2rem;
 		padding-bottom: 2rem;
-		border-bottom: 1px solid #eee;
+		border-bottom: 1px solid var(--color-border);
 	}
 
 	.full-content {
 		font-size: 1.1rem;
 		line-height: 1.8;
-		color: #444;
+		color: var(--color-text);
+		opacity: 0.85;
 	}
 
 	.article-actions {
 		padding: 2rem 0;
-		border-top: 1px solid #eee;
-		border-bottom: 1px solid #eee;
+		border-top: 1px solid var(--color-border);
+		border-bottom: 1px solid var(--color-border);
 		margin: 2rem 0;
 	}
 
 	.comments-section {
-		background: white;
+		background: var(--color-card-bg);
+		border: 1px solid var(--color-border);
 		border-radius: 12px;
 		padding: 2rem;
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 4px 20px var(--color-shadow);
 	}
 
 	.comments-section h3 {
 		margin-bottom: 2rem;
-		color: #333;
+		color: var(--color-text);
 	}
 
 	.comments-list {
@@ -294,8 +301,15 @@
 		display: flex;
 		gap: 1rem;
 		padding: 1rem;
-		background: #f8f9fa;
+		background: var(--color-bg-2);
+		border: 1px solid var(--color-border);
 		border-radius: 8px;
+		transition: all 0.2s ease;
+	}
+
+	.comment:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 2px 8px var(--color-shadow);
 	}
 
 	.comment-avatar {
@@ -305,7 +319,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: white;
+		background: var(--color-card-bg);
+		border: 1px solid var(--color-border);
 		border-radius: 50%;
 		flex-shrink: 0;
 	}
@@ -322,18 +337,21 @@
 	}
 
 	.comment-author {
-		color: #333;
+		color: var(--color-text);
+		font-weight: 600;
 	}
 
 	.comment-time {
-		color: #6c757d;
+		color: var(--color-text);
+		opacity: 0.7;
 		font-size: 0.9rem;
 	}
 
 	.comment-text {
 		margin: 0;
 		line-height: 1.6;
-		color: #555;
+		color: var(--color-text);
+		opacity: 0.9;
 	}
 
 	@media (max-width: 768px) {

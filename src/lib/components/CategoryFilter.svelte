@@ -17,7 +17,7 @@
 <div class="category-filter">
 	{#each categories as category}
 		<button 
-			class="category-btn" 
+			class="button category-btn" 
 			class:active={category === activeCategory}
 			onclick={() => handleCategoryClick(category)}
 		>
@@ -35,26 +35,7 @@
 	}
 
 	.category-btn {
-		background: #f8f9fa;
-		border: 1px solid #dee2e6;
-		padding: 0.5rem 1rem;
 		border-radius: 20px;
-		cursor: pointer;
-		transition: all 0.2s;
 		font-size: 0.9rem;
-	}
-
-	.category-btn.active {
-		background: #ff3e00;
-		color: white;
-		border-color: #ff3e00;
-	}
-
-	.category-btn:hover {
-		background: #e9ecef;
-	}
-
-	.category-btn.active:hover {
-		background: #e8350e;
 	}
 </style>

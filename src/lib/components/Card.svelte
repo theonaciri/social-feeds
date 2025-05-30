@@ -15,15 +15,16 @@
 <style>
 	.card {
         width: 100%;
-		background: #f8f9fa;
+		background: var(--color-card-bg);
+		border: 1px solid var(--color-border);
 		border-radius: 8px;
-		border-left: 4px solid #ff3e00;
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		border-left: 4px solid var(--color-theme-1);
+		box-shadow: 0 2px 8px var(--color-shadow);
 		transition: all 0.2s ease;
 	}
 
 	.card:hover {
-		transform: translateY(-1px);
-		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 16px var(--color-shadow);
 	}
 </style>
