@@ -1,6 +1,10 @@
 
 # social-feeds
 
+[Screencast_20250530_041458_.webm](https://github.com/user-attachments/assets/15e33bd6-4231-4054-8334-a588e15ecc1d)
+
+
+
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
 ## Creating a project
