@@ -10,6 +10,7 @@
 		onLike?: () => void;
 		onComment?: () => void;
 		onShare?: () => void;
+		onClick?: () => void;
 	}
 
 	import ActionButtons from './ActionButtons.svelte';
@@ -25,12 +26,13 @@
 		shares = 0,
 		onLike,
 		onComment,
-		onShare
+		onShare,
+		onClick
 	}: Props = $props();
 </script>
 
 <Card>
-	<article class="news-article">
+	<article class="news-article" class:clickable={onClick} onclick={onClick}>
 		<div class="article-header">
 			<h3>{title}</h3>
 			{#if time}
@@ -61,6 +63,15 @@
 <style>
 	.news-article {
 		padding: 0;
+		transition: transform 0.2s ease;
+	}
+
+	.news-article.clickable {
+		cursor: pointer;
+	}
+
+	.news-article.clickable:hover {
+		transform: translateY(-2px);
 	}
 
 	.article-header {

@@ -4,6 +4,7 @@
 	import PostCard from '$lib/components/PostCard.svelte';
 	import List from '$lib/components/List.svelte';
     import type { Item } from '$lib/components/List.svelte';
+    import { fade } from 'svelte/transition';
     type Post = {
         id: number;
         title: string;
@@ -62,13 +63,13 @@
 		description="Welcome to your social feed! Here you'll see updates from your friends and the community."
 	/>
 	
-	<div in:fadeIn={{ duration: 300, delay: 100 }}>
+	<div in:fade={{ duration: 300, delay: 100 }}>
 		<List 
 			items={posts} 
 			class="mt-4"
 		>
 			{#snippet children(item, index)}
-				<div in:staggeredSlide={{ duration: 300, index }}>
+				<div in:fade={{ duration: 300 }}>
 					<PostCard 
 						title={item.title}
 						content={item.content}

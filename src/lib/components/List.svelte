@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import { fly, fade, scale } from 'svelte/transition';
 
     export interface Item {
         [key: string]: any;
